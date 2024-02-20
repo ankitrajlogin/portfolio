@@ -1,3 +1,13 @@
+// responsive navbar code 
+const menuToggle= document.querySelector(".menu-bars");
+const nav = document.querySelector("nav ul");
+
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("slide");
+  });
+
+
 // swiper section ; ;
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
@@ -9,6 +19,20 @@ var swiper = new Swiper(".mySwiper", {
       el: ".swiper-pagination",
       clickable: true,
     },
+    breakpoints: {
+      // when window width is <= 499px
+      499: {
+          slidesPerView: 1,
+          spaceBetweenSlides: 30
+      },
+      // when window width is <= 999px
+      999: {
+          slidesPerView: 3,
+          spaceBetweenSlides: 40
+      }
+  },
+
+
   });
 
 
