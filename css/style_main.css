@@ -17,7 +17,7 @@
  /*********************
   Navbar section 
  *********************/
-	
+/* 	
 .navbar_sec{
 	height: 100vh;
 	width: 100%;
@@ -63,6 +63,7 @@ nav ul li a:hover{
 	color: var(--main-color);
 	transition: .4s;
 }
+
 .btn{
 	background-color:var(--main-color);
 	color: white;
@@ -73,19 +74,188 @@ nav ul li a:hover{
 	border-radius: 30px;
 	transition: transform .4s; 
 }
+
 .btn:hover{
 	transform: scale(1.2);
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+
+
+body{
+    background-color: black;
 }
+
+span{
+	color: var(--main-color);
+}
+
+#subscribe{
+	background-color:var(--main-color);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 10px 35px;
+	border-radius: 30px;
+	transition: transform .4s; 
+}
+
+#subscribe .button:hover{
+
+	transform: scale(1.3);
+}
+
+
+#subscribe :hover{
+	background-color: #000;
+	transform: scale(1.2);
+	color : white
+}
+
+
+nav{
+    display:flex;
+    background-color: var(--blank-one);
+    justify-content: space-between;
+    /* padding:10px 0; */
+    color:rgb(255, 254, 254);
+    align-items: center;
+    border-radius: 30px;
+
+	padding : 25px 8% 25px 8% ;
+
+	
+}
+
+nav.logo{
+    letter-spacing: 3px;
+}
+nav ul{
+    display:flex;
+    list-style: none;
+    width:40%;
+    justify-content: space-between;
+	font-weight: bold;
+}
+
+nav ul li a:hover{
+	color: var(--main-color);
+	transition: .4s;
+}
+
+nav ul li a {
+  color:rgb(255, 254, 254);
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.btn{
+    border-radius: 40px;
+}
+/*Hamburger */
+.menu-bars{
+    display:none;
+    flex-direction: column;
+    height:20px;
+    justify-content: space-between;
+    position:relative;
+  z-index:999;
+}
+.menu-bars input{
+    position: absolute;
+    width:40px;
+    height:28px;
+        left:-5px;
+    top:-3px;
+    opacity: 0;
+    cursor:pointer;
+    z-index: 2;
+}
+
+.menu-bars span{
+    display:block;
+    width:28px;
+    height:3px;
+    background-color:rgb(255, 254, 254);
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.menu-bars span:nth-child(2){
+    transform-origin: 0 0 ;
+}
+
+.menu-bars span:nth-child(4){
+    transform-origin: 0 100% ;
+  }
+
+.menu-bars input:checked ~ span:nth-child(2){
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-bars input:checked ~ span:nth-child(4){
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px,0); 
+  }
+
+.menu-bars input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0); 
+    }
+
+
+@media only screen and (max-width: 768px){
+	nav{
+		justify-content: space-between;
+	}
+    
+    nav ul{
+        width:50%;
+    }
+
+}
+
+@media only screen and (max-width: 576px){
+  .menu-bars{
+    display:flex;
+  }
+  nav ul{
+  position:absolute;
+  right:0;
+  top:0;
+  width:100%;
+  height:100vh;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--blank-one);
+  z-index: 1;
+  transform: translateY(-100%);
+  transition: all 1s;
+  }
+  }
+  nav ul.slide{
+    transform: translateY(0);
+  }
+
+
 
 /*********************
   main section 
  *********************/
 
 .content{
-	position: absolute;
+	height: 300px;
+	/* background-color: #b16e83; */
+	/* position: absolute; */
+	
 	top: 50%;
 	left:8%;
-	transform: translateY(-50%);
+	padding: 30px 30px 30px 30px;
+	
+	/* transform: translateY(-50%); */
 }
 h1{
 	color: white;
@@ -129,6 +299,82 @@ h4{
 	top: 6px;
 	right: 6px; 
 }
+
+
+/* ************************
+ hero section 
+*********************/
+
+#home.home{
+    background-image: url('../img/wallpaper.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+    display: flex;
+	justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    align-items: center;
+}
+
+
+
+/* Styling the main image */
+
+.home .image {
+	height: 80vh;
+    /* flex: 1 1 10rem; */
+	
+}
+
+.home .image img {
+    width: 90%;
+    height: 90%;
+    padding: 1rem;
+    animation: float 3s linear infinite;
+}
+/* animating the main image   */
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(3rem);
+    }
+}
+
+
+
+/* @media (max-width: 450px) {
+    content{
+        font-size: 50%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        text-align: center;
+    }
+} */
+
+
+@media only screen and (max-width: 768px){
+
+	.home{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.content{
+		margin-bottom: 40px;
+	}
+
+    
+    nav ul{
+        width:50%;
+    }
+
+}
+
 
 
 /*********************
@@ -221,11 +467,27 @@ button:hover{
 .skill{
 	background-color: #211d1d;
 	padding-top: 20px;
-	font-size: 70px;
+	font-size: 3rem;
 	display: flex ; 
 	justify-content: center;
 	color : white ; 
 }
+
+@media only screen and (max-width: 768px){
+
+	.main{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.about img{
+		margin: 30px;
+		width: 80% ;
+	}
+
+}
+
+
+
 
 
 
@@ -412,7 +674,7 @@ h5{
 section .important-links-header{
 	background-color: var(--blank-two);
 	padding-top: 20px;
-	font-size: 70px;
+	font-size: 3rem;
 	display: flex ; 
 	justify-content: center;
 	color : white ;
@@ -469,6 +731,7 @@ section .important-links a:hover{
 
  .contact-us-header{
 	background-color: var(--blank-one);
+	height: 70px;
 	padding-top: 20px;
 	font-size: 70px;
 	display: flex ; 
@@ -721,3 +984,39 @@ section .important-links a:hover{
 }
 
 
+
+
+
+
+/**********************
+
+flex
+********************/
+
+@media only screen and (max-width: 768px){
+
+	.footer-distributed{
+		display:flex ; 
+		flex-direction: column;
+		align-items: left;
+	}
+
+	.grid-three-col{
+		display:flex ; 
+		flex-direction: column;
+	}
+
+	.important-links .a{
+		margin: 0 px;
+		padding : 0px ; 
+		border :0px ; 
+		height : 7px ;
+
+	}
+
+	.important-links{
+		display: flex;
+		flex-direction: column;
+	}
+
+}
